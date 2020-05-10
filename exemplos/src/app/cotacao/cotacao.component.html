@@ -1,0 +1,25 @@
+<h2>Cotação Dolar</h2>
+
+<div class="container"> 
+    Data <input type="date"[(ngModel)]="dataCotacao">
+    <button (click)="getCotacao(dataCotacao)">Cotação</button>
+    <br><br>
+    <table class="table table-dark table-striped">
+        <thead>
+          <tr>
+            <th>Cotação U$S Compra</th>
+            <th>Cotação U$S Venda</th>
+            <th>Data</th>
+            <th>Hora</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{getCotacaoCompra() | currency: 'BRL':true: '1.1-4'}}</td>
+            <td>{{getCotacaoVenda() | currency: 'BRL':true: '1.1-4'}}</td>
+            <td>{{getDataHoraVenda() | date: "dd/MM/yyyy"}}</td>
+            <td>{{getDataHoraVenda() | date: 'HH'}}:{{getDataHoraVenda() | date: 'mm'}}</td>
+          </tr>
+        </tbody>
+      </table>    
+</div>

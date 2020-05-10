@@ -1,0 +1,33 @@
+<h2>Dados</h2>
+<div class="container"> 
+    <table class="table w-auto small table-dark table-striped">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Nome</th>
+          <th>UserName</th>
+          <th>Email</th>
+          <th>Endereço</th>
+          <th>Complemento</th>
+          <th>Cidade</th>
+          <th>CEP</th>
+          <th>Fone</th>
+          <th>Empresa</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let pessoa of dados">
+              <td>{{pessoa.id}}</td>
+              <td>{{pessoa.name}}</td>
+              <td>{{pessoa.username}}</td>
+              <th>{{pessoa.email | lowercase}}</th>
+              <td>{{pessoa.address.street}}</td>
+              <td>{{pessoa.address.suite}}</td>
+              <td>{{pessoa.address.city}}</td>
+              <td>{{pessoa.address.zipcode}}</td>
+              <td>{{pessoa.phone}}</td>
+              <td>{{pessoa.company.name}}</td>
+          </tr>
+      </tbody>
+    </table>
+</div>
